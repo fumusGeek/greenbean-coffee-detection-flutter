@@ -1,0 +1,33 @@
+buildscript {
+    //awal 1.6.10 diubah ke 1.6.21 karena tflite deprecated
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        // awalnya 7.1.2, karena tflite deprecated diubah ke 4.1.3
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

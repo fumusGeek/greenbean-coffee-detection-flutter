@@ -1,0 +1,29 @@
+name: testhome
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=2.18.2 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_spinkit: ^5.1.0
+  get: 4.6.5
+  image: ^4.0.17
+  image_picker: ^0.8.7+5
+  logger: ^1.4.0
+  tflite_flutter: ^0.10.0
+
+dev_dependencies:
+  flutter_lints: 2.0.1
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/model/
+    - assets/model/new_model/
